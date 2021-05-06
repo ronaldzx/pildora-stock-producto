@@ -15,7 +15,7 @@ import lombok.Setter;
 @Table(name = "stock_table")
 public class Stock {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(name = "productId")
 	private Long productId;

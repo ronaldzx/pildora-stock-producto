@@ -17,7 +17,7 @@ import lombok.Setter;
 @Table(name = "product_type_table",uniqueConstraints={@UniqueConstraint(columnNames={"code"})})
 public class ProductType {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
 	private String code;

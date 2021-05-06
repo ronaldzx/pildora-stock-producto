@@ -23,8 +23,10 @@ public interface ProductMapper {
 
 	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
+	@Mapping(target = "status", ignore = true)
 	public ProductDto map(Product product);
 
+	@Mapping(target = "estado", ignore = true)
 	@Mapping(source = "product.name", target = "nombre")
 	@Mapping(source = "product.description", target = "descripcion")
 	@Mapping(source = "product.price", target = "precio")
@@ -36,6 +38,8 @@ public interface ProductMapper {
 	
 	public List<ProductFindByPriceDto> toProductFindByPriceDto(List<Product> products);
 
+	@Mapping(target = "active", ignore = true)
+	@Mapping(target = "id", ignore = true)
 	@Mapping(target="productType",ignore=true)
 	public Product toEntity(ProductSaveRequestDto productSaveRequestDto);
 
